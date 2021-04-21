@@ -16,6 +16,7 @@ function keyDownHandler(e) {
         $('body').css('background', 'white');
     }
 }
+
 function keyUpHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = false;
@@ -28,6 +29,7 @@ function keyUpHandler(e) {
 function clearDrawing(){
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
 }
+
 function drawbackground(){
     ctx.beginPath();
     ctx.rect(0,0,canvas.width,canvas.height);
@@ -35,14 +37,15 @@ function drawbackground(){
     ctx.fill();
     ctx.closePath();
 }
+
 function drawBall(){
-    // Dessine des objets
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2, false);
     ctx.fillStyle = randomColor;
     ctx.fill();
     ctx.closePath();
 }
+
 function drawPlayer(){
     ctx.beginPath();
     ctx.rect(xPlayer, canvas.height - 20, playerWidth, playerHeight);
@@ -50,6 +53,7 @@ function drawPlayer(){
     ctx.fill();
     ctx.closePath();
 }
+
 function drawBrick(x,y, bricksWidth, bricksHeight){
     ctx.beginPath();
     ctx.rect(x, y, bricksWidth, bricksHeight);
@@ -57,8 +61,8 @@ function drawBrick(x,y, bricksWidth, bricksHeight){
     ctx.fill();
     ctx.closePath();
 }
+
 function drawBricks(){
-    
     for(var row = 0;row<bricksRows; row++){
         for(var column = 0; column < bricksColumns; column++){
             bricks[row][column].x = bricksLeft;
