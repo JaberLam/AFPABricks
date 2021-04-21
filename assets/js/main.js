@@ -1,3 +1,4 @@
+/* Let's Go */
 var canvas = document.getElementById('myGame');
 var ctx = canvas.getContext('2d');
 var pauseGame = false;
